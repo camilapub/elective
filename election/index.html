@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <title>Online Voting</title>
+
+    <link rel="stylesheet" href="assets/modalstyle.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js"></script>
+    <script src="assets/modalscript.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div class="min-h-[100vh]" style="background-image: url('images/.jpg'); background-position: center; background-size: cover;">
+            <header class="shadow">
+                <div class="w-[90%] max-w-[1200px] mx-auto">
+                    <div class="pt-[20px] pb-[10px] flex flex-col items-center gap-[10px]">
+                        <img src="assets/images/envelope.svg" alt="vote tattoo" class="w-[40px] md:w-[70px] animate-bounce">
+                        <span class="text-[18px] md:text-[24px] font-[600] text-[#2e2d2d] text-center leading-[1]">Vote Your Favourite Tattoo Artist</span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="mt-[40px] w-[80%] md:w-[900px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-[20px]" style="margin-bottom: 40px;">
+                <label class="custom-radio cursor-pointer group">
+                    <input type="radio" class="hidden" name="bakery">
+                    <div class="radio-btn p-[20px] rounded-[10px] shadow-lg group-hover:shadow flex flex-col items-center gap-[10px]">
+                        <div class="flex justify-between items-center text-[18px] gap-[20px] card__details">
+                            <span>Amore Inks</span>
+                            <span>31%</span>
+                        </div>
+                        <img src="https://votetattooartist.000webhostapp.com/images/Amore.jpg" alt="tattoo" class="w-[100%] rounded-full">
+                    </div>
+                </label>
+                <label class="custom-radio cursor-pointer group">
+                    <input type="radio" class="hidden" name="bakery">
+                    <div class="radio-btn p-[20px] rounded-[10px] shadow-lg group-hover:shadow flex flex-col items-center gap-[10px]">
+                        <div class="flex justify-between items-center text-[18px] gap-[20px] card__details">
+                            <span>Shaun Inks</span>
+                            <span>29%</span>
+                        </div>
+                        <img src="https://votetattooartist.000webhostapp.com/images/Shaun.jpg" alt="tattoo" class="w-[100%] rounded-full">
+                    </div>
+                </label>
+                <label class="custom-radio cursor-pointer group">
+                    <input type="radio" class="hidden" name="bakery">
+                    <div class="radio-btn p-[20px] rounded-[10px] shadow-lg group-hover:shadow flex flex-col items-center gap-[10px]">
+                        <div class="flex justify-between items-center text-[18px] gap-[20px] card__details">
+                            <span>Fred Inks</span>
+                            <span>14%</span>
+                        </div>
+                        <img src="https://votetattooartist.000webhostapp.com/images/Fred.jpg" alt="tattoo" class="w-[100%] rounded-full">
+                    </div>
+                </label>
+                <label class="custom-radio cursor-pointer group">
+                    <input type="radio" class="hidden" name="bakery">
+                    <div class="radio-btn p-[20px] rounded-[10px] shadow-lg group-hover:shadow flex flex-col items-center gap-[10px]">
+                        <div class="flex justify-between items-center text-[18px] gap-[20px] card__details">
+                            <span>Bridget Inks</span>
+                            <span>5%</span>
+                        </div>
+                        <img src="https://votetattooartist.000webhostapp.com/images/Bridget.jpeg" alt="tattoo" class="w-[100%] rounded-full">
+                    </div>
+                </label>
+                <label class="custom-radio cursor-pointer group">
+                    <input type="radio" class="hidden" name="bakery">
+                    <div class="radio-btn p-[20px] rounded-[10px] shadow-lg group-hover:shadow flex flex-col items-center gap-[10px]">
+                        <div class="flex justify-between items-center text-[18px] gap-[20px] card__details">
+                            <span>Lissane Inks</span>
+                            <span>6%</span>
+                        </div>
+                        <img src="https://votetattooartist.000webhostapp.com/images/Lissane.jpeg" alt="tattoo" class="w-[100%] rounded-full">
+                    </div>
+                </label>
+                <label class="custom-radio cursor-pointer group">
+                    <input type="radio" class="hidden" name="bakery">
+                    <div class="radio-btn p-[20px] rounded-[10px] shadow-lg group-hover:shadow flex flex-col items-center gap-[10px]">
+                        <div class="flex justify-between items-center text-[18px] gap-[20px] card__details">
+                            <span>Sincerely, Sam Inks</span>
+                            <span>15%</span>
+                        </div>
+                        <img src="https://votetattooartist.000webhostapp.com/images/sincerely-sam-cakes.jpg" alt="tattoo" class="w-[100%] rounded-full">
+                    </div>
+                </label>
+            </div>
+            <div class="max-w-[800px] w-[90%] mx-auto my-[40px]" style="text-align: center">
+                <button id="voteButton" class="p-[10px_40px] bg-gray-400 text-white rounded" style="position: relative;" disabled onclick="goToInstagram()">Vote me</button>
+            </div>
+            <footer class="bg-black">
+                <div class="py-[10px] max-w-[1200px] w-[90%] mx-auto text-white text-[14px] font-[300]" style="text-align: center;">
+                    <span>© 2023 TinyVotes. All rights reserved.</span>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content" id="modalContent">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>You want to vote for <span id="selectedBakery"></span>?</p>
+            <p>Continue with Instagram to complete this process.</p>
+        </div>
+    </div>
+</body>
+</html>
